@@ -1,7 +1,32 @@
-import React from 'react';
+// ReviewDialog.jsx
+import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
 const ReviewDialog = ({ show, handleClose, movie }) => {
+  const [reviewText, setReviewText] = useState('');
+
+  // Function to handle review submission
+  const handleSubmit = async () => {
+    try {
+      const review = {
+        movieId: movie.id,       // Link review to the movie
+        movieTitle: movie.title, // Movie title
+        reviewText: reviewText,  // Review content
+        createdAt: new Date().toISOString() // Timestamp
+      };
+
+      // POST request to json-server to save the review
+      await axios.post('http://localhost:5001/reviews', review);
+
+      alert('Review submitted successfully!');
+      handleClose(); // Close the modal after submission
+    } catch (error) {
+      console.error('Error submitting review:', error);
+      alert('Failed to submit review.');
+    }
+  };
+
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
@@ -11,7 +36,13 @@ const ReviewDialog = ({ show, handleClose, movie }) => {
         <Form>
           <Form.Group controlId="reviewText">
             <Form.Label>Your Review</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Write your review here..." />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+              placeholder="Write your review here..."
+            />
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -19,7 +50,7 @@ const ReviewDialog = ({ show, handleClose, movie }) => {
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleClose}>
+        <Button variant="primary" onClick={handleSubmit}>
           Submit Review
         </Button>
       </Modal.Footer>

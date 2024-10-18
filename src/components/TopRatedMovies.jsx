@@ -10,7 +10,7 @@ const TopRatedMovies = () => {
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false); 
   const [currentMovie, setCurrentMovie] = useState(null);
-
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -35,6 +35,15 @@ const TopRatedMovies = () => {
   if (error) {
     return <div>{error}</div>;
   }
+
+  const fetchReviews = async (movieId) => {
+    try {
+      const response = await axios.get(`http://localhost:5001/reviews?movieId=${movieId}`);
+      setReviews(response.data);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+    }
+  };
 
   const handleShowModal = (movie) => {
     setCurrentMovie(movie); // Set the current movie for which the review is being written
