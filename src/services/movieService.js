@@ -12,3 +12,14 @@ export const fetchMovies = (query) => {
     },
   });
 };
+
+export const fetchTopRatedMovies = () => {
+    return axios.get(`${BASE_URL}movie/top_rated?language=en-US&page=1`, {
+      headers: {
+        Authorization: `Bearer ${BEARER_TOKEN}`,
+        accept: 'application/json',
+      },
+    });
+  };
+
+
