@@ -1,11 +1,22 @@
 import React from 'react';
-import TopRatedMovies from './components/TopRatedMovies';  // Import the TopRatedMovies component
+import NavBar from './components/NavBar';
+import TopRatedMovies from './components/TopRatedMovies';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div>
-      <h1>Movie Review App</h1>
-      <TopRatedMovies />  {/* Render the TopRatedMovies component */}
+    <div className="container-fluid">
+      <div className="row">
+       {/* Sidebar (NavBar) */}
+       <div className="col-12 col-md-3 bg-dark text-white p-3" style={{ minHeight: '100vh' }}>
+          <NavBar />
+        </div>
+
+        {/* Main content (Top Rated Movies) */}
+        <div className="col-12 col-md-9">
+          <TopRatedMovies />
+        </div>
+      </div>
     </div>
   );
 }
