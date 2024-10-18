@@ -1,0 +1,26 @@
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* Create exactly 5 equal-width columns */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Grid item */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Movie poster */
+.grid-item img {
+  width: 200px; /* Fixed width for movie posters */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
