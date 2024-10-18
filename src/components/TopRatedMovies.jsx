@@ -45,6 +45,8 @@ const TopRatedMovies = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">{index + 1}. {movie.title}</h5>
+                {/* Review button */}
+                <button className="btn btn-primary mt-3">Write a Review</button>
               </div>
             </div>
           </div>
