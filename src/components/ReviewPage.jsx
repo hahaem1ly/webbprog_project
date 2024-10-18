@@ -5,7 +5,6 @@ import axios from 'axios';
 const ReviewPage = () => {
   const [reviews, setReviews] = useState([]);
 
-  // Fetch all reviews from json-server
   useEffect(() => {
     const fetchReviews = async () => {
       try {

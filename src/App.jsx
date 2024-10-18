@@ -1,24 +1,29 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import TopRatedMovies from './components/TopRatedMovies';
+import ReviewPage from './components/ReviewPage'; // Make sure this is imported
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes and Route
 
-function App() {
+const App = () => {
   return (
-    <div className="container-fluid">
-      <div className="row">
-       {/* Sidebar (NavBar) */}
-       <div className="col-12 col-md-3 bg-dark text-white p-3" style={{ minHeight: '100vh' }}>
-          <NavBar />
-        </div>
+    <Router>
+      <div className="d-flex">
+        {/* NavBar */}
+        <NavBar />
 
-        {/* Main content (Top Rated Movies) */}
-        <div className="col-12 col-md-9">
-          <TopRatedMovies />
+        {/* Main Content */}
+        <div className="container-fluid">
+          <Routes>
+            {/* Default Route */}
+            <Route path="/" element={<TopRatedMovies />} />
+            <Route path="/movies" element={<TopRatedMovies />} />
+            <Route path="/review" element={<ReviewPage />} />
+          </Routes>
         </div>
       </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
