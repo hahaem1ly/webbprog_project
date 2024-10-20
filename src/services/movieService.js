@@ -21,4 +21,9 @@ export const fetchTopRatedMovies = () => {
     });
   };
 
+export const fetchUpcomingMovies = () => {
+
+  
+}
+
 

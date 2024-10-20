@@ -14,6 +14,10 @@ const NavBar = () => {
         <Nav.Link as={Link} to="/review" className="text-white">
           Review
         </Nav.Link>
+        <Nav.Link as={Link} to="/upcoming" className="text-white">
+          Upcoming
+        </Nav.Link>
+        
       </Nav>
     </div>
   );
