@@ -5,6 +5,7 @@ import ReviewPage from './components/ReviewPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import UpcomingMovies from './components/UpcomingMovies';
+import NowPlaying from './components/NowPlaying';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/movies" element={<TopRatedMovies />} />
             <Route path="/review" element={<ReviewPage />} />
             <Route path="/upcoming" element={<UpcomingMovies />} />
+            <Route path="/now_playing" element={<NowPlaying />} />
             
 
           </Routes>

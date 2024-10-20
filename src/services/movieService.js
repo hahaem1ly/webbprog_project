@@ -29,6 +29,15 @@ export const fetchUpcomingMovies = () => {
     }
   });
 
-}
+};
+
+export const fetchNowPlaying = () => {
+  return axios.get(`${BASE_URL}movie/now_playing`, {
+    headers: {
+      Authorization: `Bearer ${BEARER_TOKEN} `,
+      accept: 'application/json',
+    }
+  });
+};
 
 
