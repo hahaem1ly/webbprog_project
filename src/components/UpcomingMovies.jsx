@@ -33,7 +33,7 @@ const UpcomingMovies = () =>{
 
       return (
         <div>
-          <h1>Upcoming Movies</h1>
+          <h1>Upcoming Movies!!</h1>
           <div className="row">
             {upcomingMovies.map((movie) => (
               <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -43,7 +43,10 @@ const UpcomingMovies = () =>{
                     alt={movie.title}
                     className="card-img-top"
                   />
-                  
+                   <div className="card-body">
+                    <h3 className="card-title">{movie.title}</h3>
+                    <h5>Release date: {movie.release_date}</h5>
+                    </div>
                 </div>
               </div>
             ))}
