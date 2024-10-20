@@ -1,11 +1,3 @@
 {
-  "reviews": [
-    {
-      "id": "0850",
-      "movieId": 238,
-      "movieTitle": "The Godfather",
-      "reviewText": "",
-      "createdAt": "2024-10-20T14:10:54.328Z"
-    }
-  ]
+  "reviews": []
 }
