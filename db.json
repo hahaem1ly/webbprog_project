@@ -1,0 +1,18 @@
+{
+  "reviews": [
+    {
+      "id": "50f6",
+      "movieId": 238,
+      "movieTitle": "The Godfather",
+      "reviewText": "123",
+      "createdAt": "2024-10-18T21:47:27.389Z"
+    },
+    {
+      "id": "290e",
+      "movieId": 346,
+      "movieTitle": "Seven Samurai",
+      "reviewText": "good movie",
+      "createdAt": "2024-10-18T21:53:52.439Z"
+    }
+  ]
+}
