@@ -31,6 +31,16 @@ A simple React app that fetches and displays top-rated movies.
    npm install
    ```
 
+- **React DOM** for managing the DOM in React applications:
+  `bash
+     npm install react-dom
+     `
+
+  - **React Bootstrap** for UI components:
+    ```bash
+    npm install react-bootstrap bootstrap
+    ```
+
 4. Start the JSON server (for local reviews):
 
    ```bash
