@@ -22,8 +22,13 @@ export const fetchTopRatedMovies = () => {
   };
 
 export const fetchUpcomingMovies = () => {
+  return axios.get(`${BASE_URL}movie/upcoming?language=en-US&page=1`,{
+    headers: {
+      Authorization: `Bearer ${BEARER_TOKEN} `,
+      accept: 'application/json',
+    }
+  });
 
-  
 }
 
 

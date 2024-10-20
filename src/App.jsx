@@ -4,6 +4,7 @@ import TopRatedMovies from './components/TopRatedMovies';
 import ReviewPage from './components/ReviewPage'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import UpcomingMovies from './components/UpcomingMovies';
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
             <Route path="/" element={<TopRatedMovies />} />
             <Route path="/movies" element={<TopRatedMovies />} />
             <Route path="/review" element={<ReviewPage />} />
-           
+            <Route path="/upcoming" element={<UpcomingMovies />} />
             
 
           </Routes>
