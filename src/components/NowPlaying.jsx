@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchNowPlaying, fetchUpcomingMovies } from '../services/movieService'; // Import the API service
+import { fetchNowPlaying} from '../services/movieService'; // Import the API service
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NowPlaying = () =>{

@@ -21,6 +21,10 @@ const NavBar = () => {
         <Nav.Link as={Link} to="/now_playing" className="text-white">
           Playing
         </Nav.Link>
+
+        <Nav.Link as={Link} to="/search" className="text-white">
+          Search
+        </Nav.Link>
         
       </Nav>
     </div>

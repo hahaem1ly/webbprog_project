@@ -30,13 +30,25 @@ const SearchMovies = ({ onSelectMovie }) => {
       <button onClick={handleSearch}>Search</button>
       
       {/* Movie list */}
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id} onClick={() => onSelectMovie(movie)}>
-            {movie.title}
-          </li>
-        ))}
-      </ul>
+      <div>
+          <div className="row">
+            {movies.map((movie) => (
+              <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div className="card h-100">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                    alt={movie.title}
+                    className="card-img-top"
+                  />
+                   <div className="card-body">
+                    <h3 className="card-title">{movie.title}</h3>
+                    <h5>Release date: {movie.release_date}</h5>
+                    </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
     </div>
   );
 };
