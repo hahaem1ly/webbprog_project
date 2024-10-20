@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import { fetchMovies } from '../services/movieService'; // Fetching service
+import { fetchMovies } from '../services/movieService';
 
-// Functional Component Definition
 const SearchMovies = ({ onSelectMovie }) => {
-  const [query, setQuery] = useState('');    // React state for search query
-  const [movies, setMovies] = useState([]);  // React state for storing fetched movies
+  const [query, setQuery] = useState('');
+  const [movies, setMovies] = useState([]);
 
-  // Event handler for searching movies
   const handleSearch = async () => {
     try {
       const response = await fetchMovies(query);
-      setMovies(response.data.results);  // Set movies from the API response
+      setMovies(response.data.results);
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
@@ -18,7 +16,6 @@ const SearchMovies = ({ onSelectMovie }) => {
 
   return (
     <div>
-      {/* Search input */}
       <input
         type="text"
         value={query}
@@ -26,10 +23,8 @@ const SearchMovies = ({ onSelectMovie }) => {
         placeholder="Search for a movie"
       />
       
-      {/* Search button */}
       <button onClick={handleSearch}>Search</button>
       
-      {/* Movie list */}
       <div>
           <div className="row">
             {movies.map((movie) => (
@@ -53,5 +48,4 @@ const SearchMovies = ({ onSelectMovie }) => {
   );
 };
 
-// Exporting the component so it can be imported and used elsewhere
 export default SearchMovies;
