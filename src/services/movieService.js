@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// You can replace this token with your real one
 const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMjFkN2VjOGY4NWVhOGE4ZDk5OGQxZmM5ZmQ2NzdmZCIsIm5iZiI6MTcyOTI1OTEzOC4yODU3MjEsInN1YiI6IjY3MDQzYzg2YjRlM2QxYTQ4NDc0MDg4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yiX8_dbBPTXivlRmbgDHCDce3oDlXLSHUau2-pQH4kc'; // This is the token provided by TMDB
 const BASE_URL = 'https://api.themoviedb.org/3/';
 

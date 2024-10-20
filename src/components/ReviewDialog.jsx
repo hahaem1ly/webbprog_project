@@ -10,17 +10,16 @@ const ReviewDialog = ({ show, handleClose, movie }) => {
   const handleSubmit = async () => {
     try {
       const review = {
-        movieId: movie.id,       // Link review to the movie
-        movieTitle: movie.title, // Movie title
-        reviewText: reviewText,  // Review content
-        createdAt: new Date().toISOString() // Timestamp
+        movieId: movie.id,       
+        movieTitle: movie.title, 
+        reviewText: reviewText,  
+        createdAt: new Date().toISOString() 
       };
 
-      // POST request to json-server to save the review
       await axios.post('http://localhost:5001/reviews', review);
 
       alert('Review submitted successfully!');
-      handleClose(); // Close the modal after submission
+      handleClose(); 
     } catch (error) {
       console.error('Error submitting review:', error);
       alert('Failed to submit review.');

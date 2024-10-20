@@ -46,7 +46,7 @@ const TopRatedMovies = () => {
   };
 
   const handleShowModal = (movie) => {
-    setCurrentMovie(movie); // Set the current movie for which the review is being written
+    setCurrentMovie(movie); 
     setShowModal(true);
   };
 

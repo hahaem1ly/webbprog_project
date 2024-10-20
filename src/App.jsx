@@ -1,9 +1,9 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import TopRatedMovies from './components/TopRatedMovies';
-import ReviewPage from './components/ReviewPage'; // Make sure this is imported
+import ReviewPage from './components/ReviewPage'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
 const App = () => {
   return (
