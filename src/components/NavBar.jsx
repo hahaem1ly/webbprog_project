@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div className="p-3 bg-dark text-white" style={{ height: '100vh' }}>
+    <div className="p-3 bg-dark text-white" style={{ minHeight: '100vh'}}>
       <h4>Menu</h4>
       <Nav className="flex-column">
        

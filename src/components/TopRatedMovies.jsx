@@ -61,7 +61,7 @@ const TopRatedMovies = () => {
       <h1>Top Rated Movies</h1>
       <div className="row">
         {movies.map((movie, index) => (
-          <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" style={{ width: '300px', height: 'auto' }}>
             <div className="card h-100">
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}

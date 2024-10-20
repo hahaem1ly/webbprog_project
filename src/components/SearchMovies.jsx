@@ -33,12 +33,12 @@ const SearchMovies = ({ onSelectMovie }) => {
       <div>
           <div className="row">
             {movies.map((movie) => (
-              <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" style={{ width: '300px', height: 'auto' }}>
                 <div className="card h-100">
                   <img
                     src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                     alt={movie.title}
-                    className="card-img-top"
+                    className="card-img-top img-fluid"
                   />
                    <div className="card-body">
                     <h3 className="card-title">{movie.title}</h3>
