@@ -30,9 +30,11 @@ export const MovieCard = ({ movie, handleShowModal }) => {
         <div className={styles.cardBody}>
           <h5 className={styles.cardTitle}>{movie.title}</h5>
           <div className={styles.buttonWrap}>
-            <Button variant="primary" onClick={() => handleShowModal(movie)}>
-              Write a Review
-            </Button>
+            {handleShowModal && (
+              <Button variant="primary" onClick={() => handleShowModal(movie)}>
+                Write a Review
+              </Button>
+            )}
           </div>
         </div>
       </div>
