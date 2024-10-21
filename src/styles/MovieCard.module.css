@@ -1,0 +1,23 @@
+.cardBody {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+.cardTitle {
+  min-height: 60px;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+.buttonWrap {
+  margin-top: auto;
+}
