@@ -6,7 +6,7 @@ export const MovieCard = ({ movie, handleShowModal }) => {
   const hasPoster = movie.poster_path !== null;
 
   return (
-    <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
+    <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-2 mb-4" style={{ width: '300px', height: 'auto' }}>
       <div className={"card h-100"}>
         {hasPoster ? (
           <img
@@ -30,6 +30,7 @@ export const MovieCard = ({ movie, handleShowModal }) => {
         <div className={styles.cardBody}>
           <h5 className={styles.cardTitle}>{movie.title}</h5>
           <div className={styles.buttonWrap}>
+          <h5>Release date: {movie.release_date}</h5>
             {handleShowModal && (
               <Button variant="primary" onClick={() => handleShowModal(movie)}>
                 Write a Review
