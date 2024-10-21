@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import styles from "../styles/MovieCard.module.css";
+import ReviewDialog from "./ReviewDialog";
 
-export const MovieCard = ({ movie, handleShowModal }) => {
+export const MovieCard = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
   const hasPoster = movie.poster_path !== null;
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div key={movie.id} className="col-12 col-sm-6 col-md-4 col-lg-2 mb-4" style={{ width: '300px', height: 'auto' }}>
-      <div className={"card h-100"}>
+      <div className="card h-100">
         {hasPoster ? (
           <img
             src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
@@ -29,15 +39,18 @@ export const MovieCard = ({ movie, handleShowModal }) => {
         )}
         <div className={styles.cardBody}>
           <h5 className={styles.cardTitle}>{movie.title}</h5>
-          <div className={styles.buttonWrap}>
           <h5>Release date: {movie.release_date}</h5>
-            {handleShowModal && (
-              <Button variant="primary" onClick={() => handleShowModal(movie)}>
-                Write a Review
-              </Button>
-            )}
+          <div className={styles.buttonWrap}>
+            <Button variant="primary" onClick={handleShowModal}>
+              Write a Review
+            </Button>
           </div>
         </div>
+        <ReviewDialog
+          show={showModal}
+          handleClose={handleCloseModal}
+          movie={movie}
+        />
       </div>
     </div>
   );
