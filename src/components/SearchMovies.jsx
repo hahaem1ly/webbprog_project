@@ -28,7 +28,7 @@ const SearchMovies = ({ onSelectMovie }) => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="row">
       <div className="search-bar d-flex justify-content-center">
         <input
           type="text"
